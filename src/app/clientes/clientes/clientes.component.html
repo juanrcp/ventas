@@ -1,0 +1,28 @@
+<div class="container">
+    <h2 style="text-align: center;">CLIENTES</h2>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">DIRECCION</th>
+        <th scope="col">TELEFONO</th>
+        <th scope="col">EMAIL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of getClientes()" routerLink="/cliente-detalle/{{cliente.id}}">
+        <th scope="row">{{cliente.id}}</th>
+        <td>{{cliente.name}}</td>
+        <td>{{cliente.address}}</td>
+        <td>{{cliente.phoneNumber}}</td>
+        <td>{{cliente.mail}}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">Pulse en el campo que desee para actualizarlo.</td>
+        </tr>
+      </tfoot>
+  </table>
+</div>

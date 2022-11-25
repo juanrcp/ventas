@@ -1,0 +1,28 @@
+<div class="container">
+    <h2 style="text-align: center;">ARTICULOS</h2>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">FAMILIA</th>
+        <th scope="col">STOCK</th>
+        <th scope="col">PRECIO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let articulo of getArticulos()" routerLink="/articulo-detalle/{{articulo.id}}">
+        <th scope="row">{{articulo.id}}</th>
+        <td>{{articulo.name}}</td>
+        <td>{{articulo.family}}</td>
+        <td>{{articulo.stock}} Unid.</td>
+        <td>{{articulo.price}} €</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td td colspan="5">Pulse en el campo que desee para actualizarlo.</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

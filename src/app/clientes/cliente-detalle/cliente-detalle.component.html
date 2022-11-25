@@ -1,0 +1,30 @@
+<app-clientes></app-clientes>
+<div class="container" *ngIf="detalles">
+
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  
+      <h3 for="id">MODIFICAR ID: {{detalles.id}}</h3>
+      <br>
+      <br>
+      <label for="name">ID (no modificable): </label>
+      <input id="id" type="number" formControlName="name" class="form-control" value="{{detalles.id}}" placeholder="{{detalles.id}}" readonly="readonly">
+
+      <label for="name">NOMBRE: </label>
+      <input id="name" type="text" formControlName="name" class="form-control" placeholder="{{detalles.name}}" [(ngModel)]="detalles.name">
+    
+      <label for="address">DIRECCION: </label>
+      <input id="address" type="text" formControlName="address" class="form-control" placeholder="{{detalles.address}}" [(ngModel)]="detalles.address">
+
+      <label for="phoneNumber">TELEFONO: </label>
+      <input id="phoneNumber" type="number" formControlName="phoneNumber" class="form-control" placeholder="{{detalles.phoneNumber}}" [(ngModel)]="detalles.phoneNumber">
+
+      <label for="mail">EMAIL: </label>
+      <input id="mail" type="text" formControlName="mail" class="form-control" placeholder="{{detalles.mail}}" [(ngModel)]="detalles.mail">     
+  
+      <br>
+      <p>Rellena algun campo para activar el boton.</p>
+      <button class="btn btn-primary" type="submit" [disabled]="!profileForm.valid">GUARDAR</button>
+    </form> 
+    <br>
+    <button class="btn btn-secondary" (click)="goBack()">VOLVER</button>
+  </div>  

@@ -1,0 +1,29 @@
+<app-articulo></app-articulo>
+<div class="container" *ngIf="detallesArticulo">
+
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  
+      <h3 for="id">MODIFICAR ID: {{detallesArticulo.id}}</h3>   
+      <br>
+      <label for="name">ID (no modificable): </label>
+      <input id="id" type="number" formControlName="name" class="form-control" value="{{detallesArticulo.id}}" placeholder="{{detallesArticulo.id}}" readonly="readonly">
+
+      <label for="name">NOMBRE: </label>
+      <input id="name" type="text" formControlName="name" class="form-control" placeholder="{{detallesArticulo.name}}" [(ngModel)]="detallesArticulo.name">
+    
+      <label for="family">FAMILIA: </label>
+      <input id="family" type="text" formControlName="family" class="form-control" placeholder="{{detallesArticulo.family}}" [(ngModel)]="detallesArticulo.family">
+
+      <label for="price">PRECIO: </label>
+      <input id="price" type="number" formControlName="price" class="form-control" placeholder="{{detallesArticulo.price}}" [(ngModel)]="detallesArticulo.price">
+
+      <label for="stock">STOCK: </label>
+      <input id="stock" type="number" formControlName="stock" class="form-control" placeholder="{{detallesArticulo.stock}}" [(ngModel)]="detallesArticulo.stock">     
+  
+      <br>
+      <p>Rellena algun campo para activar el boton.</p>
+      <button class="btn btn-primary" type="submit" [disabled]="!profileForm.valid">GUARDAR</button>
+    </form> 
+    <br>
+    <button class="btn btn-secondary" (click)="goBack()">VOLVER</button>
+  </div>  
